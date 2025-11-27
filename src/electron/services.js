@@ -1,5 +1,6 @@
 import clc from 'cli-color';
-import server from 'NeteaseCloudMusicApi/server';
+import checkAuthToken from '../utils/checkAuthToken';
+import server from '@neteaseapireborn/api/server';
 
 export async function startNeteaseMusicApi() {
   // Let user know that the service is starting
@@ -7,7 +8,7 @@ export async function startNeteaseMusicApi() {
 
   // Load the NCM API.
   await server.serveNcmApi({
-    port: 35216,
+    port: 10754,
     moduleDefs: require('../ncmModDef'),
   });
 }
